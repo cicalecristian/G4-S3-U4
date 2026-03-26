@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
+@Table(name = "gara_di_atletica")
 @DiscriminatorValue("gara_di_atletica")
 public class GaraDiAtletica extends Evento {
 
@@ -15,6 +16,11 @@ public class GaraDiAtletica extends Evento {
     private long id;
 
     @ManyToMany
+    @JoinTable(
+            name = "partecipazioni_gara_di_atletica",
+            joinColumns = @JoinColumn(name = "gara_id"),
+            inverseJoinColumns = @JoinColumn(name = "atleta_id")
+    )
     private Set<Persona> atleti;
 
     @ManyToOne

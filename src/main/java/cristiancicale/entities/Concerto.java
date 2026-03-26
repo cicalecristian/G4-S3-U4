@@ -12,7 +12,9 @@ public class Concerto extends Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
+    @Enumerated(EnumType.STRING)
     private Genere genere;
+    @Enumerated(EnumType.STRING)
     private InStreaming inStreaming;
 
     protected Concerto() {

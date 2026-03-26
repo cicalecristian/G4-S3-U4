@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "partita_di_calcio")
 @DiscriminatorValue("partita_di_calcio")
 public class PartitaDiCalcio extends Evento {
 
